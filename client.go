@@ -49,11 +49,15 @@ type APIClient struct {
 
 	// API Services
 
+	ClassApi *ClassApiService
+
 	DrivesApi *DrivesApiService
 
 	DrivesGetDrivesApi *DrivesGetDrivesApiService
 
 	DrivesRootApi *DrivesRootApiService
+
+	EducationUserApi *EducationUserApiService
 
 	GroupApi *GroupApiService
 
@@ -70,6 +74,8 @@ type APIClient struct {
 	MeDrivesApi *MeDrivesApiService
 
 	MeUserApi *MeUserApiService
+
+	SchoolApi *SchoolApiService
 
 	UserApi *UserApiService
 
@@ -92,9 +98,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.ClassApi = (*ClassApiService)(&c.common)
 	c.DrivesApi = (*DrivesApiService)(&c.common)
 	c.DrivesGetDrivesApi = (*DrivesGetDrivesApiService)(&c.common)
 	c.DrivesRootApi = (*DrivesRootApiService)(&c.common)
+	c.EducationUserApi = (*EducationUserApiService)(&c.common)
 	c.GroupApi = (*GroupApiService)(&c.common)
 	c.GroupsApi = (*GroupsApiService)(&c.common)
 	c.MeChangepasswordApi = (*MeChangepasswordApiService)(&c.common)
@@ -103,6 +111,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MeDriveRootChildrenApi = (*MeDriveRootChildrenApiService)(&c.common)
 	c.MeDrivesApi = (*MeDrivesApiService)(&c.common)
 	c.MeUserApi = (*MeUserApiService)(&c.common)
+	c.SchoolApi = (*SchoolApiService)(&c.common)
 	c.UserApi = (*UserApiService)(&c.common)
 	c.UsersApi = (*UsersApiService)(&c.common)
 

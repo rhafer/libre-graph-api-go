@@ -78,12 +78,24 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ClassApi* | [**AddUserToClass**](docs/ClassApi.md#addusertoclass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
+*ClassApi* | [**CreateClass**](docs/ClassApi.md#createclass) | **Post** /education/classes | Add new education class
+*ClassApi* | [**DeleteClass**](docs/ClassApi.md#deleteclass) | **Delete** /education/class/{class-id} | Delete education class
+*ClassApi* | [**DeleteUserFromClass**](docs/ClassApi.md#deleteuserfromclass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
+*ClassApi* | [**GetClass**](docs/ClassApi.md#getclass) | **Get** /education/class/{class-id} | Get class by key
+*ClassApi* | [**ListClasses**](docs/ClassApi.md#listclasses) | **Get** /education/classes | Get education class
+*ClassApi* | [**UpdateClass**](docs/ClassApi.md#updateclass) | **Patch** /education/class/{class-id} | Update properties of a education class
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new space of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
 *DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
 *DrivesApi* | [**UpdateDrive**](docs/DrivesApi.md#updatedrive) | **Patch** /drives/{drive-id} | Update the space
 *DrivesGetDrivesApi* | [**ListAllDrives**](docs/DrivesGetDrivesApi.md#listalldrives) | **Get** /drives | Get All drives
 *DrivesRootApi* | [**GetRoot**](docs/DrivesRootApi.md#getroot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+*EducationUserApi* | [**CreateEducationUser**](docs/EducationUserApi.md#createeducationuser) | **Post** /education/users | Add new education user
+*EducationUserApi* | [**DeleteEducationUser**](docs/EducationUserApi.md#deleteeducationuser) | **Delete** /education/users/{user-id} | Delete educationUser
+*EducationUserApi* | [**GetEducationUser**](docs/EducationUserApi.md#geteducationuser) | **Get** /education/users/{user-id} | Get properties of educationUser
+*EducationUserApi* | [**ListEducationUsers**](docs/EducationUserApi.md#listeducationusers) | **Get** /education/users | Get entities from education users
+*EducationUserApi* | [**UpdateEducationUser**](docs/EducationUserApi.md#updateeducationuser) | **Patch** /education/users/{user-id} | Update properties of educationUser
 *GroupApi* | [**AddMember**](docs/GroupApi.md#addmember) | **Post** /groups/{group-id}/members/$ref | Add a member to a group
 *GroupApi* | [**DeleteGroup**](docs/GroupApi.md#deletegroup) | **Delete** /groups/{group-id} | Delete entity from groups
 *GroupApi* | [**DeleteMember**](docs/GroupApi.md#deletemember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
@@ -97,6 +109,15 @@ Class | Method | HTTP request | Description
 *MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get drives from me
 *MeUserApi* | [**GetOwnUser**](docs/MeUserApi.md#getownuser) | **Get** /me | Get current user
+*SchoolApi* | [**AddClassToSchool**](docs/SchoolApi.md#addclasstoschool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
+*SchoolApi* | [**AddUserToSchool**](docs/SchoolApi.md#addusertoschool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
+*SchoolApi* | [**CreateSchool**](docs/SchoolApi.md#createschool) | **Post** /education/schools | Add new school
+*SchoolApi* | [**DeleteClassFromSchool**](docs/SchoolApi.md#deleteclassfromschool) | **Delete** /education/schools/{school-id}/classes/{class-id}/$ref | Unassign class from a school
+*SchoolApi* | [**DeleteSchool**](docs/SchoolApi.md#deleteschool) | **Delete** /education/schools/{school-id} | Delete school
+*SchoolApi* | [**DeleteUserFromSchool**](docs/SchoolApi.md#deleteuserfromschool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
+*SchoolApi* | [**GetSchool**](docs/SchoolApi.md#getschool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
+*SchoolApi* | [**ListSchools**](docs/SchoolApi.md#listschools) | **Get** /education/schools | Get a list of schools and their properties
+*SchoolApi* | [**UpdateSchool**](docs/SchoolApi.md#updateschool) | **Patch** /education/schools/{school-id} | Update properties of a school
 *UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
 *UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
@@ -106,14 +127,25 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ClassMemberReference](docs/ClassMemberReference.md)
+ - [ClassReference](docs/ClassReference.md)
+ - [CollectionOfClass](docs/CollectionOfClass.md)
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)
+ - [CollectionOfEducationUser](docs/CollectionOfEducationUser.md)
  - [CollectionOfGroup](docs/CollectionOfGroup.md)
+ - [CollectionOfSchools](docs/CollectionOfSchools.md)
  - [CollectionOfUser](docs/CollectionOfUser.md)
  - [Deleted](docs/Deleted.md)
  - [DirectoryObject](docs/DirectoryObject.md)
  - [Drive](docs/Drive.md)
  - [DriveItem](docs/DriveItem.md)
+ - [EducationClass](docs/EducationClass.md)
+ - [EducationOrganization](docs/EducationOrganization.md)
+ - [EducationSchool](docs/EducationSchool.md)
+ - [EducationUser](docs/EducationUser.md)
+ - [EducationUserReference](docs/EducationUserReference.md)
+ - [Entity](docs/Entity.md)
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
@@ -124,6 +156,7 @@ Class | Method | HTTP request | Description
  - [Image](docs/Image.md)
  - [ItemReference](docs/ItemReference.md)
  - [MemberReference](docs/MemberReference.md)
+ - [ObjectIdentity](docs/ObjectIdentity.md)
  - [OdataError](docs/OdataError.md)
  - [OdataErrorDetail](docs/OdataErrorDetail.md)
  - [OdataErrorMain](docs/OdataErrorMain.md)
